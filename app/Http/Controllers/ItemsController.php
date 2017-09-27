@@ -13,13 +13,32 @@ class ItemsController extends Controller
     	$this->middleware('auth');
     }
 
-    public function postItem(Request $request)
+    public function newItem()
+    {
+        $countries = [
+            'Nigeria', 'United States of America', 'United Kingdom'
+        ];
+
+        $nigerianLocations = [
+            'Osun', 'Oyo', 'Delta', 'Lagos'
+        ];
+
+        return view('user.items.new', compact('countries', 'nigerianLocations'));
+    }
+
+    public function showPostedItems()
+    {
+        return view('user.items.index');
+    }
+
+    public function postNewItem(Request $request)
     {
     	$user = Auth::user();
 
     	$this->validate($request, [
     		'title' => 'required',
     		'description' => 'required',
+            'country' => 'required',
     		'location' => 'required'
     	]);
 
@@ -27,26 +46,27 @@ class ItemsController extends Controller
     	$item->title = $request->title;
     	$item->description = $request->description;
     	$item->category = $request->category;
-    	$item->location = $request->location;
+    	$item->country = $request->country;
+        $item->location = $request->location;
 
     	if ($user->items->save()) {
     		// redirect
-    		return redirect('/home');
+    		return redirect()->route('posteditems')->with('success', 'Item successfully posted');
     	}
     	return redirect()->back()->with('err', 'Oops! Looks like an error occured.');
+    }
+
+    public function deleteItem($itemID)
+    {
+        $item = Item::where('id', $itemID)->first();
+        $item->delete();
+        return redirect()->back()->with('success', 'Successfully deleted the item');
     }
 
     public function editItem($itemID)
     {
     	$item = Item::find($itemID);
     	return view('user.items.edit', compact('item'));
-    }
-
-    public function deleteItem($itemID)
-    {
-    	$item = Item::where('id', $itemID)->first();
-    	$item->delete();
-    	return redirect()->back()->with('success', 'Successfully deleted the item');
     }
 
     public function postEditItem(Request $request, $itemID)
@@ -65,7 +85,7 @@ class ItemsController extends Controller
 
     	if ($item->update()) {
     		// redirect
-    		return redirect()->back()->with('success', 'Update successfully done!');
+    		return redirect()->route('posteditems')->with('success', 'Update successfully done!');
     	}
     	return redirect()->back()->with('err', 'Oops! Looks like an error occured.');
     }

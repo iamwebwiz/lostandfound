@@ -16,7 +16,13 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+
 Route::post('/registerUser', 'UserController@userRegistration');
 Route::get('/logout', 'UserController@userLogout');
 
+// User dashboard routes
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/items', 'ItemsController@showPostedItems')->name('posteditems');
+Route::get('/items/new', 'ItemsController@newItem')->name('newitem');
+Route::post('/items/new', 'ItemsController@postNewItem')->name('postnewitem');
+Route::get('/items/{id}/edit', 'ItemsController@editItem')->name('edititem');

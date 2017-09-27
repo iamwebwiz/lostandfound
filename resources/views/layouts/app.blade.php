@@ -3,12 +3,15 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html class="no-js"> <!--<![endif]-->
+<html class="no-js" lang="en"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Webwiz">
+    <meta name="author" content="Noticeboard Team">
+    <meta name="author" content="Ogele Timothy">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title', 'Lost and Found')</title>
@@ -49,8 +52,12 @@
                     <ul class="menu">
                         <li><a href="/">Home</a></li>
                         <li><a  href="http://blog.noticeboardonline.net">Blog</a></li>
-                        <li><a href="/login">Login</a></li>
-                        <li><a href="/register">Signup</a></li>
+                        @if (Auth::guest())
+                            <li><a href="/login">Login</a></li>
+                            <li><a href="/register">Signup</a></li>
+                        @else
+                            <li><a href="/logout">Logout</a></li>
+                        @endif
                     </ul>
 
                     <ul class="social-icons text-right">

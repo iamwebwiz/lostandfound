@@ -27,7 +27,8 @@ class UserController extends Controller
 
         // redirect if successful
         if ($user->save()) {
-            return redirect('/login')->with('success', 'You are successfully registered!');
+            Auth::login($user);
+            return redirect('/home')->with('success', 'You are successfully registered!');
         }
         return redirect()->back()->with('err', 'Unable to register, please check the form again!');
     }
