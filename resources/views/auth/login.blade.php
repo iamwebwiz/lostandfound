@@ -1,69 +1,36 @@
 @extends('layouts.app')
 
-@section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
+@section('title')
+Login
+@endsection
 
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
-                        {{ csrf_field() }}
+@section('body')
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+<div class="main-container">
+    <section class="no-pad login-page fullscreen-element">
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
-                                </a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+        <div class="background-image-holder">
+            <img class="background-image" alt="Poster Image For Mobiles" src="{{ asset('assets/img/hero6.jpg') }}">
         </div>
-    </div>
+
+        <div class="container align-vertical">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 text-center">
+                    <h1 class="text-white">Login to continue</h1>
+                    <div class="photo-form-wrapper clearfix">
+                        <form method="post" action="{{ route('login') }}">
+                            {{ csrf_field() }}
+                            <input class="form-email" name="email" type="email" placeholder="Email Address">
+                            <input class="form-password" name="password" type="password" placeholder="Password">
+                            <input class="login-btn btn-filled" type="submit" value="Login">
+                        </form>
+                    </div><!--end of photo form wrapper-->
+                    <a href="/register" class="text-white">Create an account ➞</a><br>
+                    <a href="{{ route('password.request') }}" class="text-white">I've forgotten my password</a>
+                </div>
+            </div><!--end of row-->
+        </div><!--end of container-->
+    </section>
 </div>
+
 @endsection

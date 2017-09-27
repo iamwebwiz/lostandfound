@@ -39,7 +39,7 @@
 
             <div class="row nav-menu">
                 <div class="col-sm-3 col-md-2 columns">
-                    <a href="index-2.html">
+                    <a href="/">
                         <img class="logo logo-light" alt="Logo" src="{{ asset('assets/img/logo-light.png') }}">
                         <img class="logo logo-dark" alt="Logo" src="{{ asset('assets/img/logo-dark.png') }}">
                     </a>
@@ -47,28 +47,28 @@
 
                 <div class="col-sm-9 col-md-10 columns">
                     <ul class="menu">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a  href="blog.html">Blog</a></li>
-                        <li><a href="login.html">Login</a></li>
-                        <li><a href="register.html">Signup</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a  href="http://blog.noticeboardonline.net">Blog</a></li>
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/register">Signup</a></li>
                     </ul>
 
                     <ul class="social-icons text-right">
 
                         <li>
-                            <a href="#">
+                            <a href="https://twitter.com/oaunoticeboard">
                                 <i class="icon social_twitter"></i>
                             </a>
                         </li>
 
                         <li>
-                            <a href="#">
+                            <a href="https://facebook.com/oaunoticeboard">
                                 <i class="icon social_facebook"></i>
                             </a>
                         </li>
 
                         <li>
-                            <a href="#">
+                            <a href="https://instagram.com/oaunoticeboard">
                                 <i class="icon social_instagram"></i>
                             </a>
                         </li>
@@ -95,10 +95,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <span class="text-white">© 2017 Pivot Inc.</span>
-                    <span class="text-white"><a href="#">hello@mini-blog.com</a></span>
-                    <span class="text-white">+234 6127 492</span>
-                    <span class="text-white">300 Collins St. Ikeja Lagos 3000</span>
+                    <span class="text-white">© 2017 Noticeboard</span>
+                    <span class="text-white">
+                        <a href="mailto:support@noticeboardonline.net">support@noticeboardonline.net</a>
+                    </span>
+                    <span class="text-white">+234 813 269 0608</span>
+                    <span class="text-white">Obafemi Awolowo University</span>
                 </div>
             </div><!--end for row-->
         </div><!--end of container-->

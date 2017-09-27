@@ -16,5 +16,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::post('/registerUser', 'UserController@userRegistration');
+Route::get('/logout', 'UserController@userLogout');
 
 Route::get('/home', 'HomeController@index')->name('home');
