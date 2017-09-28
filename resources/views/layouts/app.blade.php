@@ -22,6 +22,7 @@
     <link href="{{ asset('assets/css/lightbox.min.css') }}" rel="stylesheet" type="text/css" media="all"/>
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" media="all"/>
     <link href="{{ asset('assets/css/theme.css') }}" rel="stylesheet" type="text/css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/font-awesome/css/font-awesome.min.css') }}">
     <!--[if gte IE 9]>
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/ie9.css') }}" />
     <![endif]-->
@@ -56,6 +57,7 @@
                             <li><a href="/login">Login</a></li>
                             <li><a href="/register">Signup</a></li>
                         @else
+                            <li><a href="/home">Dashboard</a></li>
                             <li><a href="/logout">Logout</a></li>
                         @endif
                     </ul>

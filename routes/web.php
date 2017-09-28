@@ -11,14 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'FrontendController@displayItems');
 
 Auth::routes();
 
 Route::post('/registerUser', 'UserController@userRegistration');
 Route::get('/logout', 'UserController@userLogout');
+
+Route::get('/items/{id}/details', 'FrontendController@showItemDetails');
 
 // User dashboard routes
 Route::get('/home', 'HomeController@index')->name('home');

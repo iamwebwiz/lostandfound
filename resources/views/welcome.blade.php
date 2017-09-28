@@ -2,6 +2,17 @@
 
 @section('body')
 
+<style>
+    .fixedHeight {
+        min-height: 450px;
+    }
+
+    .image_overflow {
+        height: 300px;
+        overflow: hidden;
+    }
+</style>
+
 <header class="page-header">
     <div class="background-image-holder parallax-background">
         <img class="background-image" alt="Background Image" src="{{ asset('assets/img/hero20.jpg') }}">
@@ -23,5 +34,44 @@
         </div><!--end of row-->
     </div><!--end of container-->
 </header>
+
+<section>
+    <div class="container">
+        @if (count($items) == 0)
+            <h1 class="text-center text-primary">No items have been posted at this moment!</h1>
+        @else
+            <h1 class="text-center">Recently Placed Items</h1>
+            <hr>
+            <div class="row">
+                @foreach ($items as $item)
+                    <div class="col-md-4 col-sm-6">
+                        <div class="panel panel-default fixedHeight">
+                            <div class="panel-heading image_overflow">
+                                <img src="{{ asset('storage/lost-and-found/'. $item->image) }}">
+                            </div>
+                            <div class="panel-body">
+                                <h3>{{ $item->title }}</h3>
+                                <hr>
+                                <h4><i class="fa fa-map-marker"></i> {{ $item->location }}</h4>
+                            </div>
+                            <div class="panel-footer">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6">
+                                        <h4>{{ $item->created_at->diffForHumans() }}</h4>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <a href="/items/{{ $item->id }}/details" class="btn btn-primary">
+                                            Preview
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        @endif
+    </div>
+</section>
 
 @endsection
