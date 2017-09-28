@@ -26,3 +26,4 @@ Route::get('/items', 'ItemsController@showPostedItems')->name('posteditems');
 Route::get('/items/new', 'ItemsController@newItem')->name('newitem');
 Route::post('/items/new', 'ItemsController@postNewItem')->name('postnewitem');
 Route::get('/items/{id}/edit', 'ItemsController@editItem')->name('edititem');
+Route::get('/items/{id}/delete', 'ItemsController@deleteItem')->name('delete_item');

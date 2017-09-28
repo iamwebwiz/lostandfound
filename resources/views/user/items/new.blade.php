@@ -13,7 +13,9 @@ Post new item
             <hr>
             <div class="row">
                 <div class="col-md-8">
-                    <form action="" method="post">
+                    @include('partials.message-block')
+                    <form action="{{ route('postnewitem') }}" method="post" enctype="multipart/form-data">
+                        {{ csrf_field() }}
                         <div class="form-group">
                             <label>Title</label>
                             <input type="text" name="title" placeholder="Title" class="form-control">
@@ -33,14 +35,8 @@ Post new item
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="image">
-                                        Image
-                                    </label>
-                                    <br>
-                                    <label class="btn btn-primary">
-                                        <i class="icon fa-photo"></i> Please Choose
-                                        <input type="file" name="image" accept="image/*" style="display: none;">
-                                    </label>
+                                    <label for="image">Image</label>
+                                    <input type="file" name="image" accept="image/*" class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -49,16 +45,16 @@ Post new item
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Location</label>
-                                    <select name="country" class="form-control">
+                                    <select name="country" id="country" class="form-control">
                                         <option value="">Select location</option>
                                         @foreach ($countries as $country)
-                                            <option value="{{ $country }}">{{ $country }}</option>
+                                            <option value="{{ $country->country }}">{{ $country->country }}</option>
                                         @endforeach
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="form-group">
+                                <div class="form-group" id="nigerianLocations">
                                     <label>Location</label>
                                     <select name="location" class="form-control">
                                         <option value="">Select location</option>
@@ -67,6 +63,10 @@ Post new item
                                         @endforeach
                                     </select>
                                 </div>
+                                {{-- <div class="form-group" id="otherLocations">
+                                    <label>Location</label>
+                                    <input type="text" name="location" id="otherLocation" placeholder="Location" class="form-control">
+                                </div> --}}
                             </div>
                         </div>
 

@@ -17,7 +17,7 @@ class CreateItemsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->text('description');
-            $table->string('image')->nullable();
+            $table->string('image');
             $table->enum('category', ['lost', 'found'])->default('lost');
             $table->string('country')->default('Nigeria');
             $table->string('location')->default('Osun');

@@ -1,34 +1,26 @@
 $(function(){
-	$('a#deleteCategory').on('click', function(event) {
-		var result = confirm('Are you sure you want to delete this course?');
+	$('a#deleteItem').on('click', function(event) {
+		var result = confirm('Are you sure you want to delete this item?');
 		if (result) {
 			return true;
 		}
 		return false;
 	});
 
-	$('a#deleteOutline').on('click', function(event) {
-		var result = confirm('Do you really want to delete this course outline?');
+	$('#otherLocations').hide();
 
-		if (result) {
-			return true;
-		}
-		return false;
-	});
-
-	$('a#deleteCoursesCategory').on('click', function(event) {
-		var result = confirm('Do you really want to delete this course category?');
-		if (result) {
-			return true;
-		}
-		return false;
-	});
-
-	$('a#cancelEnrollment').on('click', function() {
-		var result = confirm('Do you really want to cancel your subscription to this course?');
-		if (result) {
-			return true;
-		}
-		return false;
-	});
+	$('#country').on('change', function() {
+        var selection = $(this).val();
+        switch (selection) {
+            case "Nigeria":
+                $('#nigerianLocations').slideDown(400);
+                $('#otherLocations').slideUp(400);
+                break;
+            default:
+                $('#nigerianLocations').slideUp(400);
+                $('#otherLocations').slideDown(400);
+                $('#otherLocation').focus();
+                break;
+        }
+    });
 });

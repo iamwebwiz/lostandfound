@@ -179,12 +179,12 @@
                     </ul>
                 </li>
 
-                <li class="dropdown">
+                {{-- <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)" data-animation="scale-up"
                        aria-expanded="false">
                         <span class="flag-icon flag-icon-ng"></span>
                     </a>
-                </li>
+                </li> --}}
 
             </ul>
         </div>

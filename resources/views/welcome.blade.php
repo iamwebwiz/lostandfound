@@ -17,8 +17,8 @@
                 <h1 class="text-white space-bottom-medium">
                     Find Lost Items With Ease
                 </h1>
-                <a target="_blank" href="blog.html" class="btn btn-primary btn-white">Start here</a>
-                <a href="login.html" class="btn btn-primary btn-filled">Sign In</a>
+                <a href="/register" class="btn btn-primary btn-white">Start here</a>
+                <a href="/login" class="btn btn-primary btn-filled">Sign In</a>
             </div>
         </div><!--end of row-->
     </div><!--end of container-->
