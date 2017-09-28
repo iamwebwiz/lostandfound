@@ -63,10 +63,10 @@ Post new item
                                         @endforeach
                                     </select>
                                 </div>
-                                {{-- <div class="form-group" id="otherLocations">
+                                <div class="form-group" id="otherLocations">
                                     <label>Location</label>
                                     <input type="text" name="location" id="otherLocation" placeholder="Location" class="form-control">
-                                </div> --}}
+                                </div>
                             </div>
                         </div>
 
