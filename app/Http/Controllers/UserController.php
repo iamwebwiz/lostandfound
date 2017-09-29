@@ -38,4 +38,10 @@ class UserController extends Controller
         Auth::logout();
         return redirect('/');
     }
+
+    public function showProfile()
+    {
+        $user = Auth::user();
+        return view('user.profile.index', compact('user'));
+    }
 }

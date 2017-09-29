@@ -28,3 +28,4 @@ Route::post('/items/new', 'ItemsController@postNewItem')->name('postnewitem');
 Route::get('/items/{id}/edit', 'ItemsController@editItem')->name('edititem');
 Route::post('/items/{id}/edit', 'ItemsController@postEditItem')->name('post_edit_item');
 Route::get('/items/{id}/delete', 'ItemsController@deleteItem')->name('delete_item');
+Route::get('/profile', 'UserController@showProfile')->name('profile');
