@@ -3,6 +3,7 @@
 namespace App\Helpers;
 
 use App\Item;
+use App\User;
 
 class ItemsHelper
 {
@@ -11,7 +12,7 @@ class ItemsHelper
         $lostItems = Item::where('category', 'lost')
             ->where('user_id', $userID);
 
-        return count($lostItems);
+        return $lostItems->count();
     }
 
     public static function getFoundItems($userID)
@@ -19,7 +20,7 @@ class ItemsHelper
         $foundItems = Item::where('category', 'found')
             ->where('user_id', $userID);
 
-        return count($foundItems);
+        return $foundItems->count();
     }
 
     public static function getAllPostedItems()

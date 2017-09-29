@@ -44,7 +44,7 @@ Post new item
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>Location</label>
+                                    <label>Country</label>
                                     <select name="country" id="country" class="form-control">
                                         <option value="">Select location</option>
                                         @foreach ($countries as $country)
@@ -54,18 +54,9 @@ Post new item
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="form-group" id="nigerianLocations">
+                                <div class="form-group">
                                     <label>Location</label>
-                                    <select name="location" class="form-control">
-                                        <option value="">Select location</option>
-                                        @foreach ($nigerianLocations as $location)
-                                            <option value="{{ $location }}">{{ $location }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="form-group" id="otherLocations">
-                                    <label>Location</label>
-                                    <input type="text" name="location" id="otherLocation" placeholder="Location" class="form-control">
+                                    <input type="text" name="location" id="location" placeholder="Location" class="form-control">
                                 </div>
                             </div>
                         </div>

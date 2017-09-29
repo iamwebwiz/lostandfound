@@ -50,9 +50,9 @@
                                 <img src="{{ asset('storage/lost-and-found/'. $item->image) }}">
                             </div>
                             <div class="panel-body">
-                                <h3>{{ $item->title }}</h3>
+                                <h3>{{ ucfirst($item->title) }}</h3>
                                 <hr>
-                                <h4><i class="fa fa-map-marker"></i> {{ $item->location }}</h4>
+                                <h4><i class="fa fa-map-marker"></i> {{ ucfirst($item->location) }}</h4>
                             </div>
                             <div class="panel-footer">
                                 <div class="row">

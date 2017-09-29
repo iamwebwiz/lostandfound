@@ -17,7 +17,8 @@ class FrontendController extends Controller
     public function showItemDetails($itemID)
     {
         $item = ItemsHelper::getItemDetails($itemID);
+        $author = $item->user;
 
-        return view('itemdetails', compact('item'));
+        return view('itemdetails', compact('item', 'author'));
     }
 }

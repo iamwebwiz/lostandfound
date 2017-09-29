@@ -152,7 +152,7 @@
                 <li class="dropdown">
                     <a data-toggle="dropdown" href="javascript:void(0)" title="Notifications" aria-expanded="false"
                        data-animation="scale-up" role="button">
-                        Hello, {{ Auth::guard('web')->user()->email }}
+                        Hello, {{ Auth::guard('web')->user()->username }}
                     </a>
 
                 </li>
@@ -254,9 +254,9 @@
            data-original-title="Settings">
             <span class="icon wb-settings" aria-hidden="true"></span>
         </a> --}}
-        {{-- <a href="javascript: void(0);" data-placement="top" data-toggle="tooltip" data-original-title="Lock">
-            <span class="icon wb-eye-close" aria-hidden="true"></span>
-        </a> --}}
+        <a href="/" target="_blank" data-placement="top" data-toggle="tooltip" data-original-title="Go to Site">
+            <span class="icon wb-globe" aria-hidden="true"></span>
+        </a>
         <a href="/logout" class="fold-show" data-placement="top" data-toggle="tooltip" data-original-title="Logout">
             <span class="icon wb-power" aria-hidden="true"></span>
         </a>
