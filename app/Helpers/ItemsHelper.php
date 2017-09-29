@@ -33,4 +33,10 @@ class ItemsHelper
         $item = Item::find($itemID);
         return $item;
     }
+
+    public static function itemToEdit($itemID)
+    {
+        $item = Item::find($itemID);
+        return $item;
+    }
 }

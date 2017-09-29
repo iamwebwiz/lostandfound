@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\ItemsHelper;
 use App\Item;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -82,28 +83,29 @@ class ItemsController extends Controller
 
     public function editItem($itemID)
     {
-    	$item = Item::find($itemID);
-    	return view('user.items.edit', compact('item'));
+    	$item = ItemsHelper::itemToEdit($itemID);
+        $categories = ['lost', 'found'];
+
+    	return view('user.items.edit', compact('item', 'categories'));
     }
 
     public function postEditItem(Request $request, $itemID)
     {
     	$item = Item::find($itemID);
-    	$this->validate($request, [
-    		'title' => 'required',
-    		'description' => 'required',
-    		'location' => 'required',
-    	]);
+        $this->validate($request, [
+            'title' => 'required',
+            'description' => 'required',
+            'category' => 'required'
+        ]);
 
-    	$item->title = $request->title;
-    	$item->description = $request->description;
-    	$item->category = $request->category;
-    	$item->location = $request->location;
+        $item->title = $request->title;
+        $item->description = $request->description;
+        $item->category = $request->category;
 
     	if ($item->update()) {
-    		// redirect
-    		return redirect()->route('posteditems')->with('success', 'Update successfully done!');
+            return redirect()->route('posteditems')->with('success', 'Update successfully done!');
     	}
-    	return redirect()->back()->with('err', 'Oops! Looks like an error occured.');
+
+        return redirect()->back()->with('err', 'Oops! Looks like an error occured.');
     }
 }

@@ -80,6 +80,7 @@
             display: block;
             font-size: 15pt;
             border-radius: 25px;
+            margin-bottom: 10px;
         }
 
         a.btn {
