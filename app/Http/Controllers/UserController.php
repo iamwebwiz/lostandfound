@@ -55,4 +55,17 @@ class UserController extends Controller
         Auth::logout();
         return redirect('/');
     }
+
+    public function userLogin(Request $request)
+    {
+        $this->validate($request, [
+            'email' => 'required',
+            'password' => 'required'
+        ]);
+
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+            return redirect()->route('home')->with('success', 'You&rsquo;re Logged In');
+        }
+        return redirect()->back()->with('err', 'Oops, Unable to login! Check your credentials');
+    }
 }

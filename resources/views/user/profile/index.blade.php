@@ -11,6 +11,7 @@ LostAndFound | My Profile
         <div class="panel-body">
             <h1 class="page-title font-weight-100">My Profile</h1>
             <hr>
+            @include('partials.message-block')
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-lg-4 col-xs-12">
                     @if (is_null($user->profilepic))

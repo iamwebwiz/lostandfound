@@ -50,12 +50,6 @@ class HomeController extends Controller
         $userID = Auth::id();
         $user = User::find($userID);
 
-        $this->validate($request, [
-            'name' => 'required',
-            'location' => 'required',
-            'phone' => 'required'
-        ]);
-
         $user->name = $request->name;
         $user->location = $request->location;
         $user->phone = $request->phone;

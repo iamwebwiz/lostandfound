@@ -15,6 +15,7 @@ Route::get('/', 'FrontendController@displayItems');
 
 Auth::routes();
 
+Route::post('/userLogin', 'UserController@userLogin')->name('userLogin');
 Route::post('/registerUser', 'UserController@userRegistration');
 Route::get('/logout', 'UserController@userLogout');
 

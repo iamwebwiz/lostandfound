@@ -17,14 +17,15 @@ Login
             <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 text-center">
                 <h1 class="text-white">Login to continue</h1>
                 <div class="photo-form-wrapper clearfix">
-                    <form method="post" action="{{ route('login') }}">
+                    @include('partials.message-block')
+                    <form method="post" action="/userLogin">
                         {{ csrf_field() }}
                         <input class="form-email" name="email" type="email" placeholder="Email Address">
                         <input class="form-password" name="password" type="password" placeholder="Password">
                         <input class="login-btn btn-filled" type="submit" value="Login">
                     </form>
                 </div><!--end of photo form wrapper-->
-                <a href="/register" class="text-white">Create an account ➞</a><br>
+                <a href="/register" class="text-white">Create an account &rarr;</a><br>
                 <a href="{{ route('password.request') }}" class="text-white">I've forgotten my password</a>
             </div>
         </div><!--end of row-->
