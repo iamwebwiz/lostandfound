@@ -48,10 +48,10 @@ Items Posted by you
                                     <td>{{ $item->created_at->diffForHumans() }}</td>
                                     <td>{{ $item->updated_at->diffForHumans() }}</td>
                                     <td>
-                                        <a href="/items/{{ $item->id }}/edit" class="btn btn-info">
+                                        <a href="{{ url('/items/'.$item->id.'/edit') }}" class="btn btn-info">
                                             Edit
                                         </a>
-                                        <a href="/items/{{ $item->id }}/delete" id="deleteItem" class="btn btn-danger">
+                                        <a href="{{ url('/items/'.$item->id.'/delete') }}" id="deleteItem" class="btn btn-danger">
                                             Delete
                                         </a>
                                     </td>

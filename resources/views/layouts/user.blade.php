@@ -108,14 +108,9 @@
             <i class="icon wb-more-horizontal" aria-hidden="true"></i>
         </button>
         <div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="gridmenu">
-            <img class="navbar-brand-logo" src="{{ asset('dashboard/assets/images/logo.png') }}" title="Remark">
-            <span class="navbar-brand-text hidden-xs"> LostAndFound</span>
+            <img class="navbar-brand-logo" src="{{ asset('assets/img/logo-small.jpg') }}" title="Noticebod">
+            {{-- <span class="navbar-brand-text hidden-xs"> LostAndFound</span> --}}
         </div>
-        <button type="button" class="navbar-toggle collapsed" data-target="#site-navbar-search"
-                data-toggle="collapse">
-            <span class="sr-only">Toggle Search</span>
-            <i class="icon wb-search" aria-hidden="true"></i>
-        </button>
     </div>
 
     <div class="navbar-container container-fluid">
@@ -136,13 +131,6 @@
                         <span class="sr-only">Toggle fullscreen</span>
                     </a>
                 </li>
-                <li class="hidden-float">
-                    <a class="icon wb-search" data-toggle="collapse" href="#" data-target="#site-navbar-search"
-                       role="button">
-                        <span class="sr-only">Toggle Search</span>
-                    </a>
-                </li>
-
             </ul>
             <!-- End Navbar Toolbar -->
 
@@ -166,14 +154,14 @@
                     </a>
                     <ul class="dropdown-menu" role="menu">
                         <li role="presentation">
-                            <a href="/profile" role="menuitem"><i class="icon wb-user" aria-hidden="true"></i> Profile</a>
+                            <a href="{{ url('profile') }}" role="menuitem"><i class="icon wb-user" aria-hidden="true"></i> Profile</a>
                         </li>
                         {{-- <li role="presentation">
                             <a href="" role="menuitem"><i class="icon wb-settings" aria-hidden="true"></i> Password Reset</a>
                         </li> --}}
                         <li class="divider" role="presentation"></li>
                         <li role="presentation">
-                            <a href="/logout" role="menuitem">
+                            <a href="{{ url('logout') }}" role="menuitem">
                                 <i class="icon wb-power" aria-hidden="true"></i> Logout
                             </a>
                         </li>
@@ -214,52 +202,53 @@
                 <ul class="site-menu">
                     <li class="site-menu-category">General</li>
                     <li class="site-menu-item">
-                        <a href="/home">
+                        <a href="{{ url('home') }}">
                             <i class="site-menu-icon wb-dashboard" aria-hidden="true"></i>
                             <span class="site-menu-title">Dashboard</span>
                         </a>
                     </li>
                     <li class="site-menu-item">
-                        <a href="/profile">
+                        <a href="{{ url('profile') }}">
                             <i class="site-menu-icon wb-user" aria-hidden="true"></i>
                             <span class="site-menu-title">Profile</span>
                         </a>
                     </li>
                     <li class="site-menu-item">
-                        <a href="/profile/edit">
+                        <a href="{{ url('profile/edit') }}">
                             <i class="site-menu-icon wb-edit" aria-hidden="true"></i>
                             <span class="site-menu-title">Edit Profile</span>
                         </a>
                     </li>
                     <li class="site-menu-item">
-                        <a href="/items">
+                        <a href="{{ url('items') }}">
                             <i class="site-menu-icon wb-list" aria-hidden="true"></i>
                             <span class="site-menu-title">Posted Items</span>
                         </a>
                     </li>
 
                     <li class="site-menu-item">
-                        <a href="/items/new">
+                        <a href="{{ url('items/new') }}">
                             <i class="site-menu-icon wb-plus" aria-hidden="true"></i>
                             <span class="site-menu-title">Add new item</span>
+                        </a>
+                    </li>
+
+                    <li class="site-menu-item">
+                        <a href="{{ url('logout') }}">
+                            <i class="site-menu-icon wb-power" aria-hidden="true"></i>
+                            <span class="site-menu-title">Logout</span>
+                        </a>
+                    </li>
+
+                    <li class="site-menu-item">
+                        <a href="{{ url('/') }}" target="_blank">
+                            <i class="site-menu-icon wb-home" aria-hidden="true"></i>
+                            <span class="site-menu-title">Go to Homepage</span>
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
-    </div>
-
-    <div class="site-menubar-footer">
-        {{-- <a href="javascript: void(0);" class="fold-show" data-placement="top" data-toggle="tooltip"
-           data-original-title="Settings">
-            <span class="icon wb-settings" aria-hidden="true"></span>
-        </a> --}}
-        <a href="/" target="_blank" data-placement="top" data-toggle="tooltip" data-original-title="Go to Site">
-            <span class="icon wb-globe" aria-hidden="true"></span>
-        </a>
-        <a href="/logout" class="fold-show" data-placement="top" data-toggle="tooltip" data-original-title="Logout">
-            <span class="icon wb-power" aria-hidden="true"></span>
-        </a>
     </div>
 </div>
 
@@ -271,8 +260,8 @@
 
 <!-- Footer -->
 <footer class="site-footer">
-    <div class="site-footer-legal">&copy; <?php echo date('Y'); ?>
-        <a href="https://twitter.com/oaunoticeboard">Noticeboard&rsquo;s Lost &lsquo;n&rsquo; Found</a>
+    <div class="site-footer-legal">&copy; 2017 Noticebod
+        <a href="https://twitter.com/oaunoticeboard">Noticebod&rsquo;s Lost &lsquo;n&rsquo; Found</a>
     </div>
     <div class="site-footer-right">
         Made with <i class="red-600 wb wb-heart"></i> by <a href="https://github.com/iamwebwiz">Oladejo Ezekiel (Webwiz)</a>

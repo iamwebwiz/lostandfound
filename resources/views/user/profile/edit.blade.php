@@ -14,7 +14,7 @@ Edit my profile
             <div class="row">
                 <div class="col-md-8">
                     @include('partials.message-block')
-                    <form action="/profile/{{ $user->id }}/edit" method="post">
+                    <form action="{{ url('profile/'.$user->id.'/edit') }}" method="post">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label>Full name</label>

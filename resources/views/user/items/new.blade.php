@@ -75,7 +75,7 @@ Post new item
                     </form>
                 </div>
                 <div class="col-md-4">
-                    <img src="{{ asset('assets/img/oaunoticeboard.jpg') }}" alt="" class="img-responsive">
+                    <img src="{{ asset('assets/img/logo-big.jpg') }}" alt="" class="img-responsive">
                 </div>
             </div>
         </div>

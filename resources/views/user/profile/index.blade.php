@@ -15,7 +15,7 @@ LostAndFound | My Profile
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-lg-4 col-xs-12">
                     @if (is_null($user->profilepic))
-                        <img src="{{ asset('assets/img/oaunoticeboard.jpg') }}" width="80%" class="img-thumbnail">
+                        <img src="{{ asset('assets/img/logo-big.jpg') }}" width="80%" class="img-thumbnail">
                     @else
                         <img src="{{ asset('storage/users/'. $user->profilepic) }}" width="80%" class="img-thumbnail">
                     @endif

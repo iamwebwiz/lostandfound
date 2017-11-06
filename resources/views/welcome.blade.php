@@ -15,7 +15,7 @@
 
 <header class="page-header">
     <div class="background-image-holder parallax-background">
-        <img class="background-image" alt="Background Image" src="{{ asset('assets/img/hero20.jpg') }}">
+        <img class="background-image" alt="Background Image" src="{{ asset('assets/img/board-4.jpeg') }}">
     </div>
 
     <div class="container">
@@ -28,8 +28,12 @@
                 <h1 class="text-white space-bottom-medium">
                     Find Lost Items With Ease
                 </h1>
-                <a href="/register" class="btn btn-primary btn-white">Start here</a>
-                <a href="/login" class="btn btn-primary btn-filled">Sign In</a>
+                @if (Auth::guest())
+                    <a href="{{ url('register') }}" class="btn btn-primary btn-white">Start here</a>
+                    <a href="{{ url('login') }}" class="btn btn-primary btn-filled">Sign In</a>
+                @else
+                    <a href="{{ url('home') }}" class="btn btn-primary btn-filled">Dashboard</a>
+                @endif
             </div>
         </div><!--end of row-->
     </div><!--end of container-->
@@ -38,7 +42,7 @@
 <section>
     <div class="container">
         @if (count($items) == 0)
-            <h1 class="text-center text-primary">No items have been posted at this moment!</h1>
+            <h1 class="text-center text-primary">No items have been posted at this time!</h1>
         @else
             <h1 class="text-center">Recently Placed Items</h1>
             <hr>
@@ -60,7 +64,7 @@
                                         <h4>{{ $item->created_at->diffForHumans() }}</h4>
                                     </div>
                                     <div class="col-md-6 col-sm-6">
-                                        <a href="/items/{{ $item->id }}/details" class="btn btn-primary">
+                                        <a href="{{ url('/items/'.$item->id.'/details') }}" class="btn btn-primary">
                                             Preview
                                         </a>
                                     </div>

@@ -28,51 +28,14 @@ Edit Item
                                     <select name="category" class="form-control">
                                         <option value="">Please Choose</option>
                                         @foreach ($categories as $category)
-                                            <option value="{{ $category }}">
+                                            <option value="{{ $category }}" {{ $item->category == $category ? 'selected' : null }}>
                                                 {{ ucfirst($category) }}
                                             </option>
                                         @endforeach
                                     </select>
                                 </div>
                             </div>
-
-                            {{-- <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="image">Image</label>
-                                    <input type="file" name="image" accept="image/*" class="form-control">
-                                </div>
-                            </div> --}}
                         </div>
-
-                        {{-- <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Country</label>
-                                    <select name="country" id="country" class="form-control">
-                                        <option value="">Select location</option>
-                                        @foreach ($countries as $country)
-                                            <option value="{{ $country->country }}">{{ $country->country }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group" id="nigerianLocations">
-                                    <label>Location</label>
-                                    <select name="location" class="form-control">
-                                        <option value="">Select location</option>
-                                        @foreach ($nigerianLocations as $location)
-                                            <option value="{{ $location }}">{{ $location }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="form-group" id="otherLocations">
-                                    <label>Location</label>
-                                    <input type="text" name="location" id="otherLocation" placeholder="Location"
-                                    value="{{ $item->location }}" class="form-control">
-                                </div>
-                            </div>
-                        </div> --}}
 
                         <div class="form-group">
                             <label>Description</label>
@@ -90,7 +53,7 @@ Edit Item
                     </form>
                 </div>
                 <div class="col-md-4">
-                    <img src="{{ asset('assets/img/oaunoticeboard.jpg') }}" alt="" class="img-responsive">
+                    <img src="{{ asset('assets/img/logo-big.jpg') }}" alt="" class="img-responsive">
                 </div>
             </div>
         </div>

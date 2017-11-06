@@ -43,22 +43,22 @@
 
             <div class="row nav-menu">
                 <div class="col-sm-3 col-md-2 columns">
-                    <a href="/">
-                        <img class="logo logo-light" alt="Logo" src="{{ asset('assets/img/logo-light.png') }}">
-                        <img class="logo logo-dark" alt="Logo" src="{{ asset('assets/img/logo-dark.png') }}">
+                    <a href="{{ url('/') }}">
+                        <img class="logo logo-light" alt="Logo" src="{{ asset('assets/img/logo-small.jpg') }}">
+                        <img class="logo logo-dark" alt="Logo" src="{{ asset('assets/img/logo-small.jpg') }}">
                     </a>
                 </div>
 
                 <div class="col-sm-9 col-md-10 columns">
                     <ul class="menu">
-                        <li><a href="/">Home</a></li>
-                        <li><a  href="http://blog.noticeboardonline.net">Blog</a></li>
+                        <li><a href="{{ url('/') }}">Home</a></li>
+                        <li><a  href="http://forum.noticebod.com">Forum</a></li>
                         @if (Auth::guest())
-                            <li><a href="/login">Login</a></li>
-                            <li><a href="/register">Signup</a></li>
+                            <li><a href="{{ url('login') }}">Login</a></li>
+                            <li><a href="{{ url('register') }}">Signup</a></li>
                         @else
-                            <li><a href="/home">Dashboard</a></li>
-                            <li><a href="/logout">Logout</a></li>
+                            <li><a href="{{ url('home') }}">Dashboard</a></li>
+                            <li><a href="{{ url('logout') }}">Logout</a></li>
                         @endif
                     </ul>
 
@@ -104,11 +104,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <span class="text-white">© 2017 Noticeboard</span>
+                    <span class="text-white">&copy; 2017 Noticebod</span>
                     <span class="text-white">
-                        <a href="mailto:support@noticeboardonline.net">support@noticeboardonline.net</a>
+                        <a href="mailto:support@noticebod.com">support@noticebod.com</a>
                     </span>
-                    <span class="text-white">+234 813 269 0608</span>
+                    <span class="text-white">+234 706 539 4285</span>
                     <span class="text-white">Obafemi Awolowo University</span>
                 </div>
             </div><!--end for row-->
@@ -117,7 +117,7 @@
         <div class="contact-action">
             <div class="align-vertical">
                 <i class="icon text-white icon_mail"></i>
-                <a href="" class="text-white"><span class="text-white">Get in touch with us <i class="icon arrow_right"></i></span></a>
+                <a href="mailto:support@noticebod.com" class="text-white"><span class="text-white">Get in touch with us <i class="icon arrow_right"></i></span></a>
             </div>
         </div>
     </footer>
