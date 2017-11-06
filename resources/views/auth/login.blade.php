@@ -27,7 +27,6 @@ Login
                     </form>
                 </div><!--end of photo form wrapper-->
                 <a href="{{ url('register') }}" class="text-white">Create an account &rarr;</a><br>
-                <a href="{{ route('password.request') }}" class="text-white">I've forgotten my password</a>
             </div>
         </div><!--end of row-->
     </div><!--end of container-->
