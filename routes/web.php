@@ -21,6 +21,8 @@ Route::get('logout', 'UserController@userLogout');
 
 Route::get('items/{id}/details', 'FrontendController@showItemDetails');
 
+Route::get('search', 'SearchController@search')->name('search_items');
+
 // User dashboard routes
 Route::get('home', 'HomeController@index')->name('home');
 Route::get('items', 'ItemsController@showPostedItems')->name('posteditems');

@@ -10,12 +10,12 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 text-center">
-                <h1 class="text-white space-bottom-medium" style="font-weight: bolder; font-size: 70px">
+                <h1 class="text-white space-bottom-medium">
                     {{ ucfirst($item->title) }}
                 </h1>
-                <h1 class="text-white space-bottom-medium">
+                <h2 class="text-white space-bottom-medium">
                     <i class="fa fa-map-marker"></i> {{ ucfirst($item->location) }}
-                </h1>
+                </h2>
             </div>
         </div><!--end of row-->
     </div><!--end of container-->
@@ -23,6 +23,8 @@
 
 <section>
     <div class="container">
+        @include('partials.search')
+        <hr>
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel">

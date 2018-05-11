@@ -15,4 +15,14 @@ class Item extends Model
     {
     	return $this->belongsTo(User::class);
     }
+
+    public function searchItems($query)
+    {
+        return $this->where('title', 'like', "%$query%")
+                    ->orWhere('description', 'like', "%$query%")
+                    ->orWhere('category', 'like', "%$query%")
+                    ->orWhere('country', 'like', "%$query%")
+                    ->orWhere('location', 'like', "%$query%")
+                    ->paginate(30);
+    }
 }
